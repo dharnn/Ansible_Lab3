@@ -1,0 +1,22 @@
+hostname {{ inventory_hostname }}
+username admin privilege 15 secret admin
+ip ssh version 2
+line vty 0 15
+transport input ssh
+transport output ssh
+!
+line vty 0 15
+logging synchronous
+access-class 23 in
+exec-timeout 30 0
+login local
+!
+service timestamps debug datetime msec
+service timestamps log datetime msec
+!
+interface FastEthernet0/0.10
+encapsulation dot1Q 10
+interface FastEthernet0/0.20
+encapsulation dot1Q 20
+interface FastEthernet0/0.30
+encapsulation dot1Q 30
