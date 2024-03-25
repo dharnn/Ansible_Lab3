@@ -1,0 +1,11 @@
+#File for Configure OSPF Routing Protocol
+---
+- name: Configure OSPF Routing Protocol
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Ensure OSPF is enabled on routers
+      ios_config:
+        lines:
+          - router ospf 1
+          - network 192.168.10.0 0.0.0.255 area 0
