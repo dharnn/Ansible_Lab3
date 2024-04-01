@@ -6,9 +6,9 @@
   tasks:
     - name: Basic Network Setup
       template:
-        src: basic_network.j2
+        src: network_config/templates/basic_network.j2
         dest: "{{ inventory_hostname }}_config.txt"
     - name: Set OSPF
       template:
-        src: routing_setup.j2
+        src: network_config/templates/routing_setup.j2
         dest: "{{ inventory_hostname }}_ospf.txt"
