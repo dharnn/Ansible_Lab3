@@ -3,20 +3,24 @@ all:
     R1:
       ansible_host: 192.168.10.10
       ansible_user: admin
-      ansible_password: admin
     R2:
       ansible_host: 192.168.10.20
       ansible_user: admin
-      ansible_password: admin
+ 
     R3:
       ansible_host: 192.168.10.30
       ansible_user: admin
-      ansible_password: admin
+ 
     R4:
       ansible_host: 192.168.10.40
       ansible_user: admin
-      ansible_password: admin
-
   vars:
     ansible_connection: network_cli
     ansible_network_os: ios
+    ansible_password: !vault |
+                $ANSIBLE_VAULT;1.1;AES256
+                31353862646537383361636264313431316163393339613535316430306230646435363338366366
+                3935323064633639323731613962316234396463306233630a303833326330326538373362373763
+                66353562386562386464376135353433373139346437343634346534373238326562313331386530
+                3830316431393763640a393631616437353639313332306339306366626438346361323862373437
+                3034
