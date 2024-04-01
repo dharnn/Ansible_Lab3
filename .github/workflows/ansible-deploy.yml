@@ -21,8 +21,6 @@ jobs:
       - name: Install Ansible
         run: pip install ansible
 
-      - name: Run Basic Network Setup
-        run: ansible-playbook -i network_config/vars/inventory basic_network_setup.yml
+      - name: Run Playbooks
+        run: ansible-playbook -i network_config/vars/inventory network_config/tasks/templates.yml
      
-      - name: Run Routing Protocol setup
-        run: ansible-playbook -i network_config/vars/inventory routing_protocol_setup.yml
